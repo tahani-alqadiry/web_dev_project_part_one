@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create post</title>
+</head>
+<body>
+        <h3 style="color: red">{{ msg }}</h3>
+        <h3>Author:{{ post.author }}</h3>
+        <h4>Create your post:</h4>
+        <form>
+            title:<input type="text" value="{{ post.title }}"><br/><br/>
+            <textarea rows="25" cols="100" maxlength="1000" value ="{{ post.content }}" placeholder="Type here:">
+             </textarea><br/><br/>
+            <input type="submit" name="submit" value="post">
+
+         </form>
+
+
+</body>
+</html>

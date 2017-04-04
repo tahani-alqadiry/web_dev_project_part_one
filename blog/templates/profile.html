@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ author.username }}</title>
+</head>
+<body>
+
+    <h3> Username: {{ author }}</h3>
+    <hr>
+    <div style="width:50%;">
+    {% if posts %}
+        {% for post in posts %}
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content }} </p>
+            <h4>date:{{ post.release_date }}<span>,author:<a href="{% url 'profile_detail' author.username %}"> {{ post.author }}</a></span></h4>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <h3>No Posts</h3>
+    {% endif %}
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>The category of {{ category }} are:</h3>
+    <ul>
+
+    {% for post in category.post_set.all%}
+        <li>{{post.title}}-{{post.author}}</li>
+    {% endfor %}
+
+    </ul>
+</body>
+</html>

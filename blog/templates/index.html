@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div style="float: right;">
+
+    <h3><a href="/posts/category/">Categories </a></h3>
+
+     {% for category in categories %}
+
+         <ul>
+             <li><a href="{% url 'detail' category.id %}"> {{ category.title }}</a></li>
+
+
+         </ul>
+
+
+    {% endfor %}
+    </div>
+
+    <div style="padding-right:5px;margin-right:5px;float: right;">
+{#    href="/library/#}
+{#  {% url 'go_to_users' users%}  #}
+
+        <h3><a href="/users/"  >users: </a></h3>
+
+    {% for user in users%}
+
+         <ul>
+            <li><a href="{% url 'profile_detail' user.username %}">{{ user }}</a></li>
+
+         </ul>
+
+    {% endfor %}
+    </div>
+
+
+    {% for post in posts %}
+
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.content }}</p>
+        <h3>Author:<a href="{% url 'profile_detail' post.author.username %}">{{ post.author}}</a></h3>
+        <p>category:<a href="{% url 'detail' post.category.id %}">{{ post.category}}</a></p>
+        <p>date: {{ post.release_date }}</p>
+        <hr>
+    {% endfor %}
+
+
+</body>
+</html>
